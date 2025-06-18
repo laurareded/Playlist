@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Playlist</title>
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 16px; text-align: center; background-color: rgb(161, 179, 195);}
+    label { display: block; margin-top: 10px; }
+    input { margin-bottom: 10px; }
+    button { margin-top: 5px; }
+    ul { padding-left: 15px; }
+    h1 {color: mediumvioletred;}
+    
+  </style>
+</head>
+<body>
+  <h1>CRUD de Músicas</h1>
+  
+  <h2>Cadastrar nova Música</h2>
+  <form id="form-cadastrar">
+    <label>Nome:
+      <input type="text" id="nome" required />
+    </label>
+    <label>Artista:
+      <input type="text" id="artista" required />
+    </label>
+    <button type="submit">Cadastrar</button>
+  </form>
+  
+  <h2>Listar Musicas</h2>
+  <button id="btn-listar">Listar Musicas</button>
+  <ul id="listagem"></ul>
+  
+  <h2>Buscar Musica pelo ID</h2>
+  <input type="number" id="id-buscar" placeholder="Digite o ID" />
+  <button id="btn-buscar-id">Buscar</button>
+  <ul id="id-listagem"></ul>
+  
+  <h2>Excluir pelo ID</h2>
+  <input type="number" id="id-excluir" placeholder="Digite o ID para excluir" />
+  <button id="btn-excluir-id">Excluir</button>
+
+  <h2>Editar Música pelo ID</h2>
+<input type="number" id="id-editar" placeholder="Digite o ID para editar" />
+<button id="btn-editar-id">Buscar</button>
+<div id="edit-section" style="display:none; margin-top:10px;">
+  <label>
+    Nome:
+    <input type="text" id="edit-nome" />
+  </label>
+  <label>
+    Artista:
+    <input type="text" id="edit-artista" />
+  </label>
+  <button id="btn-atualizar">Atualizar</button>
+</div>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>

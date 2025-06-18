@@ -1,0 +1,6 @@
+@CriePlaylist_HostAddress = http://localhost:5159
+
+GET {{CriePlaylist_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
