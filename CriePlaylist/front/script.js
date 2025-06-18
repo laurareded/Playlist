@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const base = "http://localhost:5159/api/Musica";
 
-  // Cadastrar Casa
+  // Cadastrar Musica
   document.getElementById("form-cadastrar").addEventListener("submit", async function (e) {
     e.preventDefault();
     const nome = document.getElementById("nome").value;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Listar Casas
+  // Listar Musicas
   async function listarMusicas() {
     try {
       const res = await fetch(base);
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("btn-listar").addEventListener("click", listarMusicas);
 
-  // Buscar Casa por ID
+  // Buscar Musica por ID
   document.getElementById("btn-buscar-id").addEventListener("click", async function () {
     const id = document.getElementById("id-buscar").value;
     if (!id) return alert("Informe um ID válido.");
@@ -73,14 +73,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Excluir Casa por ID 
+  // Excluir Musica por ID 
   document.getElementById("btn-excluir-id").addEventListener("click", async function () {
     const id = document.getElementById("id-excluir").value;
     if (!id) return alert("Informe um ID válido.");
     excluirMusica(id);
   });
 
-  // Excluir Casa por botão
+  // Excluir Musica por botão
   async function excluirMusica(id) {
     if (!confirm(`Tem certeza que deseja excluir a Musica com ID ${id}?`)) return;
     try {
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Editar Casa (preenche o form com os dados da Casa)
+  /* Editar Musica 
   function editarMusica(musica) {
     document.getElementById("nome").value = musica.nome;
     document.getElementById("artista").value = musica.artista;
@@ -121,9 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Erro ao atualizar Musica!");
       }
     }
-  }
+  } */
 
-  // Função padrão pra cadastrar
+  /* Função padrão pra cadastrar
   async function defaultCadastrar(e) {
     e.preventDefault();
     const nome = document.getElementById("nome").value;
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch {
       alert("Erro ao cadastrar Musica!");
     }
-  }
+  } */
 
   // Função: Buscar música pelo ID para editar
 document.getElementById("btn-editar-id").addEventListener("click", async function () {
@@ -164,7 +164,7 @@ document.getElementById("btn-editar-id").addEventListener("click", async functio
   }
 });
 
-// Função: Atualizar música pelo ID (depois de editar)
+// Função: Atualizar música pelo ID 
 document.getElementById("btn-atualizar").addEventListener("click", async function () {
   const id = this.getAttribute("data-id");
   const nome = document.getElementById("edit-nome").value;
