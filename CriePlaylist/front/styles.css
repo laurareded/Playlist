@@ -1,0 +1,117 @@
+body {
+  background: linear-gradient(130deg, #c5c5fd 0%, #fff1e8 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+}
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 0 32px #9d9dff2c;
+  padding: 36px 24px 30px 24px;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 36px;
+  color: #673ab7;
+  letter-spacing: 2px;
+  font-weight: 900;
+  font-size: 2.4rem;
+}
+.main-btn {
+  margin: 18px 12px 36px 12px;
+  padding: 15px 38px;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  background: #673ab7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.18s;
+}
+.main-btn:hover {
+  background: #4b2487;
+  transform: scale(1.04);
+}
+.secao {
+  margin-top: 14px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.block {
+  flex: 1 1 260px;
+  min-width: 260px;
+  max-width: 360px;
+  margin: 10px 0;
+  background: #f9f7fd;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px #eee8f5;
+  padding: 18px 10px 12px 10px;
+  text-align: left;
+}
+form {
+  margin-bottom: 0;
+}
+label {
+  display: block;
+  margin-top: 9px;
+  font-weight: 500;
+}
+input[type="text"], input[type="number"] {
+  width: 95%;
+  margin: 4px 0 12px 0;
+  padding: 6px 9px;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+button[type="submit"], button:not(.main-btn):not(.back-btn) {
+  padding: 7px 22px;
+  background: #ff89c9;
+  color: #222;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  margin-top: 7px;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: background 0.14s;
+}
+button[type="submit"]:hover, button:not(.main-btn):not(.back-btn):hover {
+  background: #fd5da8;
+}
+ul {
+  padding-left: 18px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  text-align: left;
+}
+.back-btn {
+  background: #b8b8ff;
+  color: #444;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: background 0.15s;
+  float: left;
+}
+.back-btn:hover {
+  background: #8686ec;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .container { max-width: 99vw; }
+  .row { flex-direction: column; gap: 0; }
+  .block { max-width: 99vw; }
+}

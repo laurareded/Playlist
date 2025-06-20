@@ -3,60 +3,120 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Playlist</title>
-  <style>
-    body { font-family: Arial, sans-serif; font-size: 16px; text-align: center; background-color: rgb(161, 179, 195);}
-    label { display: block; margin-top: 10px; }
-    input { margin-bottom: 10px; }
-    button { margin-top: 5px; }
-    ul { padding-left: 15px; }
-    h1 {color: mediumvioletred;}
-    
-  </style>
+  <title>Minify</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <h1>CRUD de Músicas</h1>
-  
-  <h2>Cadastrar nova Música</h2>
-  <form id="form-cadastrar">
-    <label>Nome:
-      <input type="text" id="nome" required />
-    </label>
-    <label>Artista:
-      <input type="text" id="artista" required />
-    </label>
-    <button type="submit">Cadastrar</button>
-  </form>
-  
-  <h2>Listar Musicas</h2>
-  <button id="btn-listar">Listar Musicas</button>
-  <ul id="listagem"></ul>
-  
-  <h2>Buscar Musica pelo ID</h2>
-  <input type="number" id="id-buscar" placeholder="Digite o ID" />
-  <button id="btn-buscar-id">Buscar</button>
-  <ul id="id-listagem"></ul>
-  
-  <h2>Excluir pelo ID</h2>
-  <input type="number" id="id-excluir" placeholder="Digite o ID para excluir" />
-  <button id="btn-excluir-id">Excluir</button>
+  <div class="container">
 
-  <h2>Editar Música pelo ID</h2>
-<input type="number" id="id-editar" placeholder="Digite o ID para editar" />
-<button id="btn-editar-id">Buscar</button>
-<div id="edit-section" style="display:none; margin-top:10px;">
-  <label>
-    Nome:
-    <input type="text" id="edit-nome" />
-  </label>
-  <label>
-    Artista:
-    <input type="text" id="edit-artista" />
-  </label>
-  <button id="btn-atualizar">Atualizar</button>
-</div>
+    <h1>Music System Minify</h1>
+    
+    <div id="home">
+      <button id="btn-musicas" class="main-btn">Gerenciar Músicas</button>
+      <button id="btn-playlists" class="main-btn">Gerenciar Playlists</button>
+    </div>
+    
+    <!-- Seção de Músicas -->
+    <div id="sec-musicas" class="secao" style="display:none;">
+      <button class="back-btn">⬅ Voltar</button>
+      <div class="row">
+        <div class="block">
+          <form id="form-cadastrar">
+            <h2>Cadastrar nova Música</h2>
+            <label>Nome:
+              <input type="text" id="nome" required />
+            </label>
+            <label>Artista:
+              <input type="text" id="artista" required />
+            </label>
+            <button type="submit">Cadastrar</button>
+          </form>
+        </div>
+        <div class="block">
+          <h2>Listar Músicas</h2>
+          <button id="btn-listar">Listar Músicas</button>
+          <ul id="listagem"></ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="block">
+          <h2>Buscar Música pelo ID</h2>
+          <input type="number" id="id-buscar" placeholder="Digite o ID" />
+          <button id="btn-buscar-id">Buscar</button>
+          <ul id="id-listagem"></ul>
+        </div>
+        <div class="block">
+          <h2>Excluir pelo ID</h2>
+          <input type="number" id="id-excluir" placeholder="Digite o ID para excluir" />
+          <button id="btn-excluir-id">Excluir</button>
+        </div>
+        <div class="block">
+          <h2>Editar Música pelo ID</h2>
+          <input type="number" id="id-editar" placeholder="Digite o ID para editar" />
+          <button id="btn-editar-id">Buscar</button>
+          <div id="edit-section" style="display:none; margin-top:10px;">
+            <label>
+              Nome:
+              <input type="text" id="edit-nome" />
+            </label>
+            <label>
+              Artista:
+              <input type="text" id="edit-artista" />
+            </label>
+            <button id="btn-atualizar">Atualizar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Seção de Playlists -->
+    <div id="sec-playlists" class="secao" style="display:none;">
+      <button class="back-btn">⬅ Voltar</button>
+      <div class="row">
+        <div class="block">
+          <form id="form-criar-playlist">
+            <h2>Criar nova Playlist</h2>
+            <label>Nome da Playlist:
+              <input type="text" id="playlist-nome" required />
+            </label>
+            <button type="submit">Criar Playlist</button>
+          </form>
+        </div>
+        <div class="block">
+          <h2>Listar Playlists</h2>
+          <button id="btn-listar-playlists">Listar Playlists</button>
+          <ul id="listagem-playlists"></ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="block">
+          <form id="form-add-musica-playlist">
+            <h2>Adicionar Música à Playlist</h2>
+            <label>ID da Playlist:
+              <input type="number" id="add-playlist-id" required />
+            </label>
+            <label>ID da Música:
+              <input type="number" id="add-musica-id" required />
+            </label>
+            <button type="submit">Adicionar</button>
+          </form>
+        </div>
+        <div class="block">
+          <form id="form-remove-musica-playlist">
+            <h2>Remover Música da Playlist</h2>
+            <label>ID da Playlist:
+              <input type="number" id="remove-playlist-id" required />
+            </label>
+            <label>ID da Música:
+              <input type="number" id="remove-musica-id" required />
+            </label>
+            <button type="submit">Remover</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-  
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
